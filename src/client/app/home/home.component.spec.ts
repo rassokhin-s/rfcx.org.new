@@ -42,7 +42,7 @@ export function main() {
             let fixture = TestBed.createComponent(TestComponent);
             fixture.detectChanges();
 
-            let homeInstance = fixture.debugElement.children[0].componentInstance;
+            // let homeInstance = fixture.debugElement.children[0].componentInstance;
             let homeDOMEl = fixture.debugElement.children[0].nativeElement;
 
             expect(homeDOMEl.querySelectorAll('.home__img').length).toEqual(1);

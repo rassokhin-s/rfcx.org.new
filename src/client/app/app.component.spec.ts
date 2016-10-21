@@ -53,7 +53,7 @@ export function main() {
 
 @Component({
   selector: 'test-cmp',
-  template: '<sd-app></sd-app>'
+  template: '<rfcx-org></rfcx-org>'
 })
 
 class TestComponent {

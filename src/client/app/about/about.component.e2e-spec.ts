@@ -4,8 +4,8 @@ describe('About', () => {
     browser.get('/about');
   });
 
-  it('should have correct feature heading', () => {
-    expect(element(by.css('sd-about h2')).getText()).toEqual('Features');
+  it('should have correct heading', () => {
+    expect(element(by.css('sd-about h1')).getText()).toEqual('TURNING OLD PHONES INTO FOREST GUARDIANS');
   });
 
 });
