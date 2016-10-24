@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Config } from './shared/index';
+import { UserService } from './shared/user/user.service';
+
 import './operators';
 
 /**
@@ -13,7 +15,11 @@ import './operators';
 })
 
 export class AppComponent {
-  constructor() {
+  constructor(private user: UserService) {
     console.log('Environment config', Config);
+  }
+
+  isLoggedIn() {
+      return this.user.isLoggedIn();
   }
 }
