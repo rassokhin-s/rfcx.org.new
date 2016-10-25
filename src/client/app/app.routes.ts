@@ -7,5 +7,6 @@ import { HomeRoutes } from './home/index';
 export const routes: Routes = [
   ...LoginRoutes,
   ...HomeRoutes,
-  ...AboutRoutes
+  ...AboutRoutes,
+  { path: '**', redirectTo: '' }
 ];

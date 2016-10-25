@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
+import { FormsModule } from '@angular/forms';
 
 import { LoginModule } from './login/login.module';
 import { AboutModule } from './about/about.module';
@@ -24,7 +25,8 @@ import { LoggedInGuard } from './shared/user/logged-in.guard';
     LoginModule, 
     AboutModule, 
     HomeModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    FormsModule
   ],
   declarations: [AppComponent],
   providers: [{

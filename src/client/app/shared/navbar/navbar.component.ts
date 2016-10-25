@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
-/**
- * This class represents the navigation bar component.
- */
+import { UserService } from '../user/user.service';
+
+
 @Component({
   moduleId: module.id,
   selector: 'sd-navbar',
   templateUrl: 'navbar.component.html',
   styleUrls: ['navbar.component.css'],
 })
+export class NavbarComponent {
 
-export class NavbarComponent { }
+    constructor(
+        private userService: UserService
+    ) {}
+
+    logOut() {
+        this.userService.logOut();
+    }
+
+}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate,  } from '@angular/router';
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 import { UserService } from './user.service';
 
@@ -10,9 +10,14 @@ export class LoggedInGuard implements CanActivate {
         private user: UserService
     ) {}
 
-    canActivate(): boolean {
-        if (!this.user.isLoggedIn()) {
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+        if (!this.user.isLoggedIn() && state.url !== '/login') {
             this.router.navigate(['/login']);
+            return false;
+        }
+        // if user is logged in, but wants to open login page manually, then redirect to home
+        if (this.user.isLoggedIn() && state.url === '/login') {
+            this.router.navigate(['/']);
             return false;
         }
         return true;
